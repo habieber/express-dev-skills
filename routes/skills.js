@@ -7,9 +7,12 @@ var skillsCtrl = require('../controllers/skills');
 //ALL actual paths begin with "/skills"
 router.get('/', skillsCtrl.index);
 
-//GET /skills/new
+//GET for the form --> /skills/new
 router.get('/new', skillsCtrl.new);
 
 router.get('/:id', skillsCtrl.show);
+
+//POST a skill --> /skills
+router.post('/', skillsCtrl.create);
 
 module.exports = router;
