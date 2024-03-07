@@ -48,6 +48,7 @@ function edit(req, res) {
 
 function update(req, res) {
     req.body.done = !!req.body.done;
-    Skill.update(req.params.id, req.body.name);
+    console.log(req.body)
+    Skill.update(req.params.id, req.body);
     res.redirect(`/skills/${req.params.id}`);
 }

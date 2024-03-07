@@ -39,5 +39,4 @@ function deleteOne(id) {
 function update(id, updatedSkill) {
   const skill = skills.find(skill => skill.id === parseInt(id));
   Object.assign(skill, updatedSkill)
-  skill.skill = updatedSkill
 }
