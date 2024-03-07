@@ -40,14 +40,14 @@ function deleteSkill(req, res) {
 
 function edit(req, res) {
     const skill = Skill.getOne(req.params.id)
-    console.log(skill)
     res.render('skills/edit', { 
-        skill,
         title: 'Edit Skill',
+        skill
     })
 }
 
 function update(req, res) {
-    Skill.update(req.params.id, req.body.name)
-    res.redirect('/skills')
+    req.body.done = !!req.body.done;
+    Skill.update(req.params.id, req.body.name);
+    res.redirect(`/skills/${req.params.id}`);
 }
